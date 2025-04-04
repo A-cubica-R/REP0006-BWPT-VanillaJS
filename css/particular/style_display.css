@@ -1,0 +1,6 @@
+@import url('../color_variables.css');
+
+.visual-bar-v1 {
+    background-color: var(--dark);
+    color: var(--blank);
+}

@@ -1,0 +1,31 @@
+/* This CSS stylesheet is used to style the general
+layout and appearance of a web page. It includes styles
+for the body, header, footer, and various elements to ensure
+a consistent and visually appealing design across the site. */
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    height: 10vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+} */

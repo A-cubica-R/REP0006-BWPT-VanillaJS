@@ -1,0 +1,19 @@
+/*PROPERTIES HERE
+---------------------------------
+    display
+    justify-content
+    align-items
+    padding
+*/
+
+.visual-bar-v1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.presenting-tuple {
+    display: flex;
+    align-items: center;
+}
