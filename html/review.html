@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Revisar Estudiante</title>
+        <!-- Global Styles -->
+        <link rel="stylesheet" href="../css/enviroment/color_variables.css">
+        <link rel="stylesheet" href="../css/global/global_display.css">
+        <link rel="stylesheet" href="../css/global/global_classes.css">
+        <link rel="stylesheet" href="../css/enviroment/orientation_def.css">
+        <!-- Particular Styles -->
+        <link rel="stylesheet" href="../css/particular/item_display.css">
+        <link rel="stylesheet" href="../css/particular/size_display.css">
+        <link rel="stylesheet" href="../css/particular/effect_display.css">
+        <link rel="stylesheet" href="../css/particular/style_display.css">
+        <!-- RemixIcon icons source -->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    </head>
+    <body>
+        <header class="visual-bar-v1">
+            <div class="presenting-tuple">
+                <img src="../resources/images/company-logo.png" alt="Logo" class="logo img-circle">
+                <h1>Revisar Estudiante</h1>
+            </div>
+        </header>
+        <div class="content">
+            <main class="element-content">
+                <section class="view-section orientation-vertical" style="align-items: center; gap: 20px;">
+                    <img
+                        src="../resources/images/src0004-icon.png"
+                        alt="Foto del Estudiante"
+                        class="avatar img-circle"
+                        style="max-width: 150px;"
+                    >
+                    <h2 id="student-name">Nombre del Estudiante</h2>
+                    <ul class="metadata-list">
+                        <li class="metadata-item">
+                            <span class="metadata-label">Codigo:</span>
+                            <span class="metadata-value" id="student-codigo">---</span>
+                        </li>
+                        <li class="metadata-item">
+                            <span class="metadata-label">Direccion:</span>
+                            <span class="metadata-value" id="student-direccion">---</span>
+                        </li>
+                        <li class="metadata-item">
+                            <span class="metadata-label">Fecha de Nacimiento:</span>
+                            <span class="metadata-value" id="student-fecha-nacimiento">---</span>
+                        </li>
+                        <li class="metadata-item">
+                            <span class="metadata-label">Telefono:</span>
+                            <span class="metadata-value" id="student-telefono">---</span>
+                        </li>
+                        <li class="metadata-item">
+                            <span class="metadata-label">Email:</span>
+                            <span class="metadata-value" id="student-email">---</span>
+                        </li>
+                    </ul>
+                    <div class="buttons orientation-horizontal" style="gap: 10px;">
+                        <button class="button-card-action" id="edit-student-button">Editar</button>
+                        <button class="button-card-action" id="back-home-button">Regresar</button>
+                    </div>
+                </section>
+            </main>
+        </div>
+        <script>
+            document.getElementById('back-home-button').addEventListener('click', () => {
+                location.reload(); // Reload the page to return to the main view
+            });
+
+            document.getElementById('edit-student-button').addEventListener('click', () => {
+                alert('Funcionalidad de edición no implementada aún.');
+            });
+
+            // Example: Populate student data (replace with actual logic)
+            const student = {
+                codigo: '12345',
+                direccion: 'Calle Falsa 123',
+                fecha_nacimiento: '2000-01-01',
+                nombre: 'Juan Pérez',
+                telefono: '555-1234',
+                email: 'juan.perez@example.com'
+            };
+
+            document.getElementById('student-name').textContent = student.nombre;
+            document.getElementById('student-codigo').textContent = student.codigo;
+            document.getElementById('student-direccion').textContent = student.direccion;
+            document.getElementById('student-fecha-nacimiento').textContent = student.fecha_nacimiento;
+            document.getElementById('student-telefono').textContent = student.telefono;
+            document.getElementById('student-email').textContent = student.email;
+        </script>
+    </body>
+</html>
