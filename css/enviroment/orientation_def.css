@@ -6,6 +6,7 @@
 .orientation-vertical {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .orientation-horizontal-reverse {

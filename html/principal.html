@@ -18,22 +18,6 @@
         <link rel="stylesheet" href="../css/particular/other_sheet.css">
         <!-- RemixIcon icons source -->
         <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
-        <script>
-            function changeContent() {
-                const contentDiv = document.querySelector('main');
-                contentDiv.innerHTML = `
-                    <h2>Nuevo Contenido</h2>
-                    <p>Este es el contenido nuevo que reemplaza al original.</p>
-                    <div class="new-item">
-                        <p>Nuevo Elemento</p>
-                        <div class="buttons">
-                            <button>Acción A</button>
-                            <button>Acción B</button>
-                        </div>
-                    </div>
-                `;
-            }
-        </script>
     </head>
     <body>
         <header class="visual-bar-v1">
@@ -45,17 +29,17 @@
                 <ul class="orientation-horizontal">
                     <li class="button-only-v1">
                         <!-- REEMPLAZAR -->
-                        <button class="button-onlyicon-v1" onclick="changeContent()">
+                        <button class="button-onlyicon-v1" data-view="home">
                             <a class="label-for-button">Home</a>
                         </button>
                     </li>
                     <li class="button-only-v1">
-                        <button class="button-onlyicon-v1" onclick="changeContent()">
-                            <a class="label-for-button">Another Place</a>
+                        <button class="button-onlyicon-v1" data-view="form">
+                            <a class="label-for-button">Sign Up</a>
                         </button>
                     </li>
                     <li class="button-only-v1">
-                        <button class="button-onlyicon-v1" onclick="changeContent()">
+                        <button class="button-onlyicon-v1" data-view="home">
                             <a class="label-for-button">Far Far Away</a>
                         </button>
                     </li>
@@ -92,61 +76,52 @@
                 <hr class="custom-separator">
                 <div class="view-section">
                     <h1>Ups! Nothing to show yet</h1>
-                    <div class="item-card">
-                        <div class="card-header">
-                            <h2>Card Title</h2>
-                        </div>
-                        <div class="card-body">
-                            <p>Card description that provides more details about this component.</p>
-                        </div>
-                        <div class="card-footer">
-                            <button class="button-card-action">View Details</button>
-                            <button class="button-card-action">Take Action</button>
-                        </div>
+                    <!-- PUT HERE YOUR CONTENT -->
+                </div>
+            </main>
+        </div>
+        <!-- TEMPLATES -->
+        <template id="item-list-template">
+            <div class="item-list-format" id="item-component">
+                <div class="metadata-content orientation-horizontal" id="item-header">
+                    <div id="item-image">
+                        <img src="../resources/images/src0004-icon.png" alt="Logo" class="logo img-circle">
                     </div>
-                    <div class="item-list-format">
-                        <div class="metadata-content orientation-horizontal">
-                            <div>
-                                <img src="../resources/images/company-logo.png" alt="Logo" class="logo img-circle">
-                            </div>
-                            <div class="orientation-vertical">
-                                <h2>Element Title</h2>
-                                <p>Basic Element description that descrives the display of this component</p>
-                            </div>
-                        </div>
-                        <div class="buttons orientation-horizontal">
-                            <button class="button-onlyicon-v2">See this item</button>
-                            <button class="button-onlyicon-v2">Do anything else</button>
-                        </div>
+                    <div class="orientation-vertical" id="item-text">
+                        <h2 id="item-title">Element Title</h2>
+                        <p id="item-description">Basic Element description that describes the display of this component</p>
                     </div>
-                </main>
+                </div>
+                <div class="buttons orientation-horizontal" id="item-buttons">
+                    <button class="button-onlyicon-v2" id="item-action1">Action 1</button>
+                    <button class="button-onlyicon-v2" id="item-action2">Action 2</button>
+                    <button class="button-onlyicon-v2" id="item-action3">Action 3</button>
+                </div>
             </div>
-            <template id="item-list-template">
-                <div class="item-list-format">
-                    <div class="metadata-content orientation-vertical">
-                        <h2>Element Title</h2>
-                        <p>Basic Element description that descrives the display of this component</p>
-                    </div>
-                    <div class="buttons orientation-horizontal">
-                        <button class="button-onlyicon-v2">See this item</button>
-                        <button class="button-onlyicon-v2">Do anything else</button>
-                    </div>
+        </template>
+        <template id="item-card-template">
+            <div class="item-card" id="item-component">
+                <div class="card-header orientation-vertical" id="item-header">
+                    <img
+                        src="../resources/images/src0004-icon.png"
+                        alt="Logo"
+                        class="avatar img-circle"
+                        id="item-image"
+                    >
+                    <h2 id="item-title">Card Title</h2>
                 </div>
-            </template>
-            <template id="item-card-template">
-                <div class="item-card">
-                    <div class="card-header">
-                        <h2>Card Title</h2>
-                    </div>
-                    <div class="card-body">
-                        <p>Card description that provides more details about this component.</p>
-                    </div>
-                    <div class="card-footer">
-                        <button class="button-card-action">View Details</button>
-                        <button class="button-card-action">Take Action</button>
-                    </div>
+                <hr class="custom-separator" id="item-separator1">
+                <div class="card-body" id="item-body">
+                    <p id="item-description">Card description that provides more details about this component.</p>
                 </div>
-            </template>
-            <script src=""></script>
-        </body>
-    </html>
+                <hr class="custom-separator" id="item-separator2">
+                <div class="card-footer" id="item-buttons">
+                    <button class="button-card-action" id="item-action1">Action 1</button>
+                    <button class="button-card-action" id="item-action2">Action 2</button>
+                    <button class="button-card-action" id="item-action3">Action 3</button>
+                </div>
+            </div>
+        </template>
+        <script type="module" src="../javascript/main.js"></script>
+    </body>
+</html>

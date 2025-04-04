@@ -21,6 +21,8 @@ PROPERTIES HERE
     margin-right: 10px;
 }
 
+/* IMAGES */
+
 .logo {
     aspect-ratio: var(--ap-square);
     min-width: 30px;
@@ -34,6 +36,13 @@ PROPERTIES HERE
     max-width: 30px;
     width: 100%;
 }
+
+.avatar {
+    aspect-ratio: var(--ap-square);
+    width: 200px;
+}
+
+/* CONTAINERS */
 
 .content {
     display: flex;
@@ -69,5 +78,31 @@ PROPERTIES HERE
 
 .buttons button {
     margin-left: 5px;
+    width: 100%;
+}
+
+/* CARD */
+
+.item-card {
+    border-radius: 10px;
+    max-width: 300px;
+    margin: 10px;
+}
+
+.card-footer::-webkit-scrollbar {
+    height: 8px;
+}
+
+.card-footer::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+}
+
+.button-card-action {
+    border-radius: 5px;
+}
+
+/* VIEW */
+.view-section {
+    height: 100%;
     width: 100%;
 }

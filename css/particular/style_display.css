@@ -58,3 +58,29 @@
         color: var(--dark);
     }
 }
+
+/* CARD */
+
+.item-card {
+    border: 1px solid var(--greyblue_dark);
+    background-color: var(--greyblue_light);
+}
+
+.card-footer::-webkit-scrollbar {
+    height: 8px;
+}
+
+.card-footer::-webkit-scrollbar-thumb {
+    background-color: var(--greyblue_dark);
+}
+
+.card-footer::-webkit-scrollbar-track {
+    background-color: var(--greyblue_light);
+}
+
+.button-card-action {
+    font-size: 0.9rem;
+    color: var(--blank);
+    background-color: var(--greyblue_dark);
+    border: none;
+}

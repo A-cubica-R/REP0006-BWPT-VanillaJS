@@ -1,0 +1,25 @@
+@import url('color_variables.css');
+
+.bg-blank {
+    background-color: var(--blank);
+}
+
+.bg-black {
+    background-color: var(--black);
+}
+
+.bg-dark {
+    background-color: var(--dark);
+}
+
+.bg-greyblue-light {
+    background-color: var(--greyblue_light);
+}
+
+.bg-greyblue-dark {
+    background-color: var(--greyblue_dark);
+}
+
+.bg-transparent {
+    background-color: var(--transparent);
+}

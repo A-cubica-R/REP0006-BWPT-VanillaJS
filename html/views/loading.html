@@ -1,0 +1,29 @@
+<div class="loader-container">
+    <img src="../../resources/images/dynamic_loading.gif" alt="Cargando..." class="loading-gif">
+    <p class="loading-text">Cargando datos...</p>
+</div>
+
+<style>
+    .loader-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .loading-gif {
+        width: 100%;
+        max-width: 300px;
+        max-height: 300px;
+        aspect-ratio: 1 / 1;
+        object-fit: contain;
+    }
+
+    .loading-text {
+        font-family: 'Segoe UI', sans-serif;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 10px;
+    }
+</style>

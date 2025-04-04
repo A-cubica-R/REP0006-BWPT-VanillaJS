@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/enviroment/background_variables.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="content">
+        <section class="view-section orientation-vertical">
+            <h2>Formulario</h2>
+            <form class="orientation-vertical" style="gap: 20px; width: 100%; max-width: 400px;">
+                <div class="orientation-vertical">
+                    <label for="nombre" class="label-for-button">Nombre:</label>
+                    <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        class="button-onlyicon-v2 bg-greyblue-light"
+                        placeholder="Ingrese su nombre"
+                    >
+                </div>
+                <div class="orientation-vertical">
+                    <label for="email" class="label-for-button">Correo Electrónico:</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        class="button-onlyicon-v2 bg-greyblue-light"
+                        placeholder="Ingrese su correo"
+                    >
+                </div>
+                <div class="orientation-vertical">
+                    <label for="mensaje" class="label-for-button">Mensaje:</label>
+                    <textarea
+                        id="mensaje"
+                        name="mensaje"
+                        class="button-onlyicon-v2 bg-greyblue-light"
+                        placeholder="Escriba su mensaje"
+                        style="resize: none; height: 100px;"
+                    ></textarea>
+                </div>
+                <button type="submit" class="button-card-action">Enviar</button>
+            </form>
+        </section>
+    </div>
+</body>
+</html>

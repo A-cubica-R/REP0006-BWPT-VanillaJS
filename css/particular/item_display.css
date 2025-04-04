@@ -81,3 +81,57 @@
 .metadata-content {
     gap: 20px;
 }
+
+/* CARD */
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    * {
+        color: var(--greyblue_dark);
+    }
+}
+
+.item-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    overflow-x: auto;
+    gap: 5px;
+    padding: 10px;
+}
+
+.button-card-action {
+    padding: 10px 15px;
+}
+
+/* VIEW */
+.view-section.list-mode {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    /* 🚫 NO queremos que haga wrap */
+    align-items: flex-start;
+    overflow-x: hidden;
+    /* ✨ Previene desbordamiento horizontal */
+}
+
+.view-section.card-mode {
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* ✅ Esto es lo que queremos para tarjetas */
+    justify-content: center;
+    gap: 1rem;
+}
+
+
+.view-section.orientation-vertical .item-list-format {
+    width: 100%;
+}

@@ -4,6 +4,7 @@
 
 .button-name-tuple:hover, .button-only-v1:hover {
     background-color: var(--greyblue_light);
+    transition: background-color 0.3s ease;
 }
 
 .button-name-tuple:active, .button-only-v1:active {
@@ -22,6 +23,7 @@
 
 .button-onlyicon-v2:hover {
     background-color: var(--dark);
+    transition: background-color 0.3s ease;
 }
 
 .button-onlyicon-v2:active {
@@ -29,4 +31,22 @@
     transition: background-color 0.3s ease;
 }
 
+/* CARD */
+
+.item-card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button-card-action:hover {
+    background-color: var(--dark);
+}
+
+.button-card-action:active {
+    transform: scale(0.95);
+}
+
+.button-card-action {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
