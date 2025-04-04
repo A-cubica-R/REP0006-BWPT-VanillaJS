@@ -1,6 +1,6 @@
 import { loadView } from '../main.js';
 
-export function renderHome(container) {
-    loadView(container);
+export function renderHome(container, params) {
+    loadView(container, params);
 }
 
