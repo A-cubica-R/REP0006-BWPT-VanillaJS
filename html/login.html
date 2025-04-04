@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- general styles -->
+        <link rel="stylesheet" href="../css/enviroment/color_variables.css">
+        <link rel="stylesheet" href="../css/global/global_display.css">
+        <link rel="stylesheet" href="../css/global/global_classes.css">
+        <link rel="stylesheet" href="../css/enviroment/orientation_def.css">
+        <!-- Particular Styles -->
+        <link rel="stylesheet" href="../css/particular/item_display.css">
+        <link rel="stylesheet" href="../css/particular/size_display.css">
+        <link rel="stylesheet" href="../css/particular/effect_display.css">
+        <link rel="stylesheet" href="../css/particular/style_display.css">
+        <link rel="stylesheet" href="../css/particular/decorate_display.css">
+        <link rel="stylesheet" href="../css/particular/other_sheet.css">
+        <!-- RemixIcon icons source -->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+        <title>Login</title>
+    </head>
+    <body>
+        <header class="visual-bar-v1">
+            <div class="presenting-tuple">
+                <img src="../resources/images/company-logo.png" alt="Logo" class="logo img-circle">
+                <h1>Student Manager</h1>
+            </div>
+        </header>
+        <div class="content login-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; text-align: center;">
+            <section class="view-section login-display orientation-vertical">
+                <h2>Bienvenido</h2>
+                <p>Esta aplicación es un sistema de gestión de estudiantes diseñado para facilitar la administración académica.</p>
+                <form class="login-form-display" style="margin-top: 20px;">
+                    <button type="submit" class="button-card-action" id="login-button">Iniciar Sesión</button>
+                </form>
+            </section>
+        </div>
+        <script src="../js/api/login.js"></script>
+        <script src="../js/main.js"></script>
+    </body>
+</html>

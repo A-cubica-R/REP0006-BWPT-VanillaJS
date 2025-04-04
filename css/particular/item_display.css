@@ -135,3 +135,16 @@
 .view-section.orientation-vertical .item-list-format {
     width: 100%;
 }
+
+.item-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-display{
+    gap: 20px;
+    padding: 50px;
+}
