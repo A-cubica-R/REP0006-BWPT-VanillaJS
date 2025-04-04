@@ -2,3 +2,9 @@
     border-radius: 50%;
     aspect-ratio: 1/1;
 }
+
+.custom-separator {
+    border: none;
+    border-top: 2px solid #525252;
+    margin: 20px 0;
+}

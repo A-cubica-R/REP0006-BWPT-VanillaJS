@@ -1,99 +1,152 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Web</title>
-
-    <!-- Global Styles -->
-    <link rel="stylesheet" href="../css/color_variables.css">
-    <link rel="stylesheet" href="../css/global/global_display.css">
-    <link rel="stylesheet" href="../css/global/global_classes.css">
-
-    <!-- Particular Styles -->
-    <link rel="stylesheet" href="../css/particular/item_display.css">
-    <link rel="stylesheet" href="../css/particular/size_display.css">
-    <link rel="stylesheet" href="../css/particular/effect_display.css">
-    <link rel="stylesheet" href="../css/particular/style_display.css">
-    <!-- <style>
-        nav ul {
-            list-style: none;
-            display: flex;
-        }
-        nav ul li {
-            margin: 0 10px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
-        .container {
-            display: flex;
-            flex: 1;
-        }
-        aside {
-            width: 200px;
-            background: #f4f4f4;
-            padding: 20px;
-        }
-        main {
-            flex: 1;
-            padding: 20px;
-        }
-        .item {
-            display: flex;
-            justify-content: space-between;
-            background: #ddd;
-            padding: 10px;
-            margin: 10px 0;
-        }
-        .buttons button {
-            margin-left: 5px;
-        }
-    </style> -->
-</head>
-<body>
-    <header class="visual-bar-v1">
-        <div class="presenting-tuple">
-            <img src="../resources/images/company-logo.png" alt="Logo" class="logo-min img-circle">
-            <h1>Mi Sitio</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Acerca</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div class="container">
-        <aside>
-            <nav>
-                <ul>
-                    <li><a href="#">Opción 1</a></li>
-                    <li><a href="#">Opción 2</a></li>
-                    <li><a href="#">Opción 3</a></li>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Page Web</title>
+        <!-- Global Styles -->
+        <link rel="stylesheet" href="../css/enviroment/color_variables.css">
+        <link rel="stylesheet" href="../css/global/global_display.css">
+        <link rel="stylesheet" href="../css/global/global_classes.css">
+        <link rel="stylesheet" href="../css/enviroment/orientation_def.css">
+        <!-- Particular Styles -->
+        <link rel="stylesheet" href="../css/particular/item_display.css">
+        <link rel="stylesheet" href="../css/particular/size_display.css">
+        <link rel="stylesheet" href="../css/particular/effect_display.css">
+        <link rel="stylesheet" href="../css/particular/style_display.css">
+        <link rel="stylesheet" href="../css/particular/decorate_display.css">
+        <link rel="stylesheet" href="../css/particular/other_sheet.css">
+        <!-- RemixIcon icons source -->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+        <script>
+            function changeContent() {
+                const contentDiv = document.querySelector('main');
+                contentDiv.innerHTML = `
+                    <h2>Nuevo Contenido</h2>
+                    <p>Este es el contenido nuevo que reemplaza al original.</p>
+                    <div class="new-item">
+                        <p>Nuevo Elemento</p>
+                        <div class="buttons">
+                            <button>Acción A</button>
+                            <button>Acción B</button>
+                        </div>
+                    </div>
+                `;
+            }
+        </script>
+    </head>
+    <body>
+        <header class="visual-bar-v1">
+            <div class="presenting-tuple">
+                <img src="../resources/images/company-logo.png" alt="Logo" class="logo img-circle">
+                <h1>Mi Sitio</h1>
+            </div>
+            <nav class="menu-bar-v1">
+                <ul class="orientation-horizontal">
+                    <li class="button-only-v1">
+                        <!-- REEMPLAZAR -->
+                        <button class="button-onlyicon-v1" onclick="changeContent()">
+                            <a class="label-for-button">Home</a>
+                        </button>
+                    </li>
+                    <li class="button-only-v1">
+                        <button class="button-onlyicon-v1" onclick="changeContent()">
+                            <a class="label-for-button">Another Place</a>
+                        </button>
+                    </li>
+                    <li class="button-only-v1">
+                        <button class="button-onlyicon-v1" onclick="changeContent()">
+                            <a class="label-for-button">Far Far Away</a>
+                        </button>
+                    </li>
                 </ul>
             </nav>
-        </aside>
-        <main>
-            <h2>Contenido Principal</h2>
-            <div class="item">
-                <p>Elemento 1</p>
-                <div class="buttons">
-                    <button>Acción 1</button>
-                    <button>Acción 2</button>
-                </div>
+        </header>
+        <div class="content">
+            <aside class="lateral-content">
+                <nav class="menu-bar-v1">
+                    <ul class="orientation-vertical">
+                        <li class="button-name-tuple orientation-horizontal">
+                            <button class="button-onlyicon-v1">
+                                <i class="ri-edit-2-fill"></i>
+                            </button>
+                            <a class="label-for-button">Edit something</a>
+                        </li>
+                        <li class="button-name-tuple orientation-horizontal">
+                            <button class="button-onlyicon-v1">
+                                <i class="ri-add-circle-line"></i>
+                            </button>
+                            <a class="label-for-button">Add something</a>
+                        </li>
+                        <li class="button-name-tuple orientation-horizontal">
+                            <button class="button-onlyicon-v1">
+                                <i class="ri-delete-bin-line"></i>
+                            </button>
+                            <a class="label-for-button">Delete something</a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+            <main class="element-content">
+                <h2>Principal Content Below</h2>
+                <hr class="custom-separator">
+                <div class="view-section">
+                    <h1>Ups! Nothing to show yet</h1>
+                    <div class="item-card">
+                        <div class="card-header">
+                            <h2>Card Title</h2>
+                        </div>
+                        <div class="card-body">
+                            <p>Card description that provides more details about this component.</p>
+                        </div>
+                        <div class="card-footer">
+                            <button class="button-card-action">View Details</button>
+                            <button class="button-card-action">Take Action</button>
+                        </div>
+                    </div>
+                    <div class="item-list-format">
+                        <div class="metadata-content orientation-horizontal">
+                            <div>
+                                <img src="../resources/images/company-logo.png" alt="Logo" class="logo img-circle">
+                            </div>
+                            <div class="orientation-vertical">
+                                <h2>Element Title</h2>
+                                <p>Basic Element description that descrives the display of this component</p>
+                            </div>
+                        </div>
+                        <div class="buttons orientation-horizontal">
+                            <button class="button-onlyicon-v2">See this item</button>
+                            <button class="button-onlyicon-v2">Do anything else</button>
+                        </div>
+                    </div>
+                </main>
             </div>
-            <div class="item">
-                <p>Elemento 2</p>
-                <div class="buttons">
-                    <button>Acción 1</button>
-                    <button>Acción 2</button>
+            <template id="item-list-template">
+                <div class="item-list-format">
+                    <div class="metadata-content orientation-vertical">
+                        <h2>Element Title</h2>
+                        <p>Basic Element description that descrives the display of this component</p>
+                    </div>
+                    <div class="buttons orientation-horizontal">
+                        <button class="button-onlyicon-v2">See this item</button>
+                        <button class="button-onlyicon-v2">Do anything else</button>
+                    </div>
                 </div>
-            </div>
-        </main>
-    </div>
-</body>
-</html>
-
+            </template>
+            <template id="item-card-template">
+                <div class="item-card">
+                    <div class="card-header">
+                        <h2>Card Title</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>Card description that provides more details about this component.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="button-card-action">View Details</button>
+                        <button class="button-card-action">Take Action</button>
+                    </div>
+                </div>
+            </template>
+            <script src=""></script>
+        </body>
+    </html>

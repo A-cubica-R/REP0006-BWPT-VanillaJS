@@ -1,6 +1,60 @@
-@import url('../color_variables.css');
+@import url('../enviroment/color_variables.css');
 
 .visual-bar-v1 {
     background-color: var(--dark);
     color: var(--blank);
+
+    * {
+        color: var(--blank);
+    }
+}
+
+.lateral-content {
+    background: var(--greyblue_dark);
+}
+
+.button-name-tuple {
+    .button-onlyicon-v1 i {
+        font-size: 35px;
+        color: var(--blank);
+    }
+}
+
+.button-only-v1 {
+    .button-onlyicon-v1 i {
+        font-size: 40px;
+        color: var(--blank);
+    }
+}
+
+.label-for-button {
+    font-size: 20px;
+}
+
+/* BUTTON ONLY ICON */
+
+.button-onlyicon-v1 {
+    border-color: var(--transparent);
+    background-color: var(--transparent);
+}
+
+.button-onlyicon-v2 {
+    font-size: 15px;
+    border-color: var(--greyblue_light);
+    background-color: var(--greyblue_dark);
+    color: var(--blank);
+}
+
+.item-list-format {
+    background: var(--greyblue_light);
+}
+
+.metadata-content {
+    h2 {
+        color: var(--blank);
+    }
+
+    p {
+        color: var(--dark);
+    }
 }

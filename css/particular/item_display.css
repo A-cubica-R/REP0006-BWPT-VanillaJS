@@ -16,4 +16,68 @@
 .presenting-tuple {
     display: flex;
     align-items: center;
+    gap: 20px;
+}
+
+.menu-bar-v1 {
+    ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+
+        li a {
+            color: white;
+            text-decoration: none;
+        }
+    }
+}
+
+.lateral-content {
+    padding: 20px;
+}
+
+.button-onlyicon-v1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.button-onlyicon-v2 {
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.button-name-tuple {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .label-for-tuple {
+        text-wrap: wrap;
+    }
+}
+
+.element-content {
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.item-list-format {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.metadata-content {
+    gap: 20px;
 }

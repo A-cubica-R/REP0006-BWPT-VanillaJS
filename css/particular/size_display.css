@@ -1,3 +1,9 @@
+:root {
+    /* Aspect Ratios*/
+    --ap-square: 1 / 1;
+    --ap-rectangle: 16 / 9;
+}
+
 /*
 PROPERTIES HERE
 ----------------------------------
@@ -12,14 +18,56 @@ PROPERTIES HERE
 */
 
 .presenting-tuple {
-    margin-right: 10px;   
+    margin-right: 10px;
 }
 
-.logo-min{
-    aspect-ratio: 1/1;
+.logo {
+    aspect-ratio: var(--ap-square);
     min-width: 30px;
-    min-height: 30px;
     max-width: 60px;
-    max-height: 60px;
+    width: 100%;
+}
+
+.icon {
+    aspect-ratio: var(--ap-square);
+    min-width: 10px;
+    max-width: 30px;
+    width: 100%;
+}
+
+.content {
+    display: flex;
+    flex: 1;
+}
+
+.lateral-content {
+    min-width: 200px;
+    max-width: 400px;
+}
+
+.button-name-tuple {
+    width: 100%;
+}
+
+.label-for-button {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.button-onlyicon-v1 {
+    border-radius: 10px;
+}
+
+.button-onlyicon-v2 {
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.item-list-format {
+    margin: 10px 0;
+}
+
+.buttons button {
+    margin-left: 5px;
     width: 100%;
 }

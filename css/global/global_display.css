@@ -19,6 +19,15 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    /* Constrain body to the viewport height */
+    overflow: hidden;
+    /* Prevent scrolling on the entire page */
+}
+
+.content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
 }
 
 /* footer {

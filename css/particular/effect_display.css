@@ -1,0 +1,32 @@
+.button-name-tuple, .button-only-v1, .button-onlyicon-v1 {
+    cursor: pointer;
+}
+
+.button-name-tuple:hover, .button-only-v1:hover {
+    background-color: var(--greyblue_light);
+}
+
+.button-name-tuple:active, .button-only-v1:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease-in-out;
+}
+
+.button-onlyicon-v1:active {
+    transform: scale(0.9);
+    transition: transform 0.1s ease-in-out;
+}
+
+.button-onlyicon-v2 {
+    cursor: pointer;
+}
+
+.button-onlyicon-v2:hover {
+    background-color: var(--dark);
+}
+
+.button-onlyicon-v2:active {
+    transform: scale(0.9);
+    transition: background-color 0.3s ease;
+}
+
+

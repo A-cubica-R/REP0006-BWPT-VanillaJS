@@ -1,0 +1,19 @@
+.orientation-horizontal {
+    display: flex;
+    flex-direction: row;
+}
+
+.orientation-vertical {
+    display: flex;
+    flex-direction: column;
+}
+
+.orientation-horizontal-reverse {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.orientation-vertical-reverse {
+    display: flex;
+    flex-direction: column-reverse;
+}
