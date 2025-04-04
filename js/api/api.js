@@ -58,25 +58,25 @@ const api = {
     // },
 
 
-    // // Create a new student
-    // async createStudent(student) {
-    //     try {
-    //         const response = await fetch(`${API_URL}/student`, {
-    //             method: 'POST',
-    //             headers: this.headers,
-    //             body: JSON.stringify(student)
-    //         });
+    // Create a new student
+    async createStudent(student) {
+        try {
+            const response = await fetch(`${API_URL}/alumno`, {
+                method: 'POST',
+                headers: this.headers,
+                body: JSON.stringify(student)
+            });
 
-    //         if (!response.ok) {
-    //             throw new Error('Failed to create student');
-    //         }
+            if (!response.ok) {
+                throw new Error('Failed to create student');
+            }
 
-    //         return await response.json();
-    //     } catch (error) {
-    //         console.error('Error creating student:', error);
-    //         throw error;
-    //     }
-    // },
+            return await response.json();
+        } catch (error) {
+            console.error('Error creating student:', error);
+            throw error;
+        }
+    },
 
 
     // // Update an existing student

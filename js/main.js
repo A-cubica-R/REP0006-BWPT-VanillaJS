@@ -1,35 +1,80 @@
 import api from './api/api.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
-    // document.getElementById('add-tech-button').addEventListener('click', async () => {
-    //     const modalTemplate = document.getElementById('addTech');
-    //     const modalClone = modalTemplate.content.cloneNode(true);
-    //     document.body.appendChild(modalClone);
-    // });
 
-    const entityList = document.getElementById('view-section');
+    const content = document.getElementById('view-section');
     const template = document.getElementById('item-card-template');
 
     async function renderEntities() {
-        entityList.innerHTML = '';
+        content.innerHTML = '';
         const students = await api.getStudents();
         students.forEach((ent) => {
             console.log(ent);
             const clone = template.content.cloneNode(true);
-            
+
             clone.querySelector('#item-title').textContent = ent.nombre;
             clone.querySelector('#item-description').textContent = ent.email;
 
+            clone.querySelector('#metadata-codigo').textContent = ent.codigo || '';
+            clone.querySelector('#metadata-direccion').textContent = ent.direccion || '';
+            clone.querySelector('#metadata-fecha-nacimiento').textContent = ent.fechaNacimiento || '';
+            clone.querySelector('#metadata-nombre').textContent = ent.nombre || '';
+            clone.querySelector('#metadata-telefono').textContent = ent.telefono || '';
+
             clone.querySelector('#item-action1').addEventListener('click', () => {
+                console.log(`Action 1 clicked for ${ent.nombre}`);
             });
 
             clone.querySelector('#item-action2').addEventListener('click', () => {
+                console.log(`Action 2 clicked for ${ent.nombre}`);
             });
 
             clone.querySelector('#item-action3').addEventListener('click', () => {
+                console.log(`Action 3 clicked for ${ent.nombre}`);
             });
 
-            entityList.appendChild(clone);
+            content.appendChild(clone);
+        });
+
+        // ADD NEW STUDENT
+
+        document.getElementById('add-student-button').addEventListener('click', async () => {
+            const viewSection = document.getElementById('view-section');
+            try {
+                const response = await fetch('./form.html');
+                if (!response.ok) {
+                    throw new Error('Failed to load form.html');
+                }
+                const htmlContent = await response.text();
+                viewSection.innerHTML = htmlContent;
+
+                const form = viewSection.querySelector('form');
+                form.addEventListener('submit', async (event) => {
+                    event.preventDefault();
+                    const student = {
+                        codigo: form.codigo.value,
+                        direccion: form.direccion.value,
+                        fecha_nacimiento: form['fecha-nacimiento'].value,
+                        nombre: form.nombre.value,
+                        telefono: form.telefono.value,
+                        email: form.email.value
+                    };
+
+                    try {
+                        await api.createStudent(student);
+                        alert('Student created successfully!');
+                        form.reset();
+                        location.reload(); // Refresh the page
+                    } catch (error) {
+                        console.error('Error creating student:', error);
+                        alert('Error creating student. Please try again later.');
+                    }
+                });
+            } catch (error) {
+                alert('Error loading form. Please try again later.');
+                console.error('Error loading form.html:', error);
+                viewSection.innerHTML = '<p>Error loading form. Please try again later.</p>';
+            }
         });
 
         //     document.getElementById('add-tech-button').addEventListener('click', async () => {
@@ -81,4 +126,43 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     }
     await renderEntities();
+});
+
+document.getElementById('add-student-button').addEventListener('click', async () => {
+    const viewSection = document.getElementById('view-section');
+    try {
+        const response = await fetch('./form.html');
+        if (!response.ok) {
+            throw new Error('Failed to load form.html');
+        }
+        const htmlContent = await response.text();
+        viewSection.innerHTML = htmlContent;
+
+        // Wait for the form to load and add event listener
+        const form = viewSection.querySelector('form');
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault(); // Prevent page reload
+            const student = {
+                codigo: form.codigo.value,
+                direccion: form.direccion.value,
+                fecha_nacimiento: form['fecha-nacimiento'].value,
+                nombre: form.nombre.value,
+                telefono: form.telefono.value,
+                email: form.email.value
+            };
+
+            try {
+                await api.createStudent(student);
+                alert('Student created successfully!');
+                form.reset(); // Clear the form fields
+            } catch (error) {
+                console.error('Error creating student:', error);
+                alert('Error creating student. Please try again later.');
+            }
+        });
+    } catch (error) {
+        alert('Error loading form. Please try again later.');
+        console.error('Error loading form.html:', error);
+        viewSection.innerHTML = '<p>Error loading form. Please try again later.</p>';
+    }
 });

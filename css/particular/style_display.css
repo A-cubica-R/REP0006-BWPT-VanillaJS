@@ -84,3 +84,7 @@
     background-color: var(--greyblue_dark);
     border: none;
 }
+
+.metadata-item{
+    list-style: none;
+}

@@ -26,7 +26,6 @@
             <nav class="menu-bar-v1">
                 <ul class="orientation-horizontal">
                     <li class="button-only-v1">
-                        <!-- REEMPLAZAR -->
                         <button class="button-onlyicon-v1" data-view="home">
                             <a class="label-for-button">Home</a>
                         </button>
@@ -54,7 +53,7 @@
                             </button>
                             <a class="label-for-button">Edit something</a>
                         </li>
-                        <li class="button-name-tuple orientation-horizontal">
+                        <li class="button-name-tuple orientation-horizontal" id="add-student-button">
                             <button class="button-onlyicon-v1">
                                 <i class="ri-add-circle-line"></i>
                             </button>
@@ -72,13 +71,10 @@
             <main class="element-content">
                 <h2>Principal Content Below</h2>
                 <hr class="custom-separator">
-                <!-- card-mode orientation-horizontal -->
                 <div class="view-section card-mode orientation-horizontal" id="view-section">
                     <h1>Ups! Nothing to show yet</h1>
-                    <!-- PUT HERE YOUR CONTENT -->
                 </div>
             </main>
-            <!-- TEMPLATES -->
             <template id="item-list-template">
                 <div class="item-list-format" id="item-component">
                     <div class="metadata-content orientation-horizontal" id="item-header">
@@ -106,11 +102,33 @@
                             class="avatar img-circle"
                             id="item-image"
                         >
-                        <h2 id="item-title">Card Title</h2>
+                        <h3 id="item-title">Card Title</h3>
                     </div>
                     <hr class="custom-separator" id="item-separator1">
                     <div class="card-body" id="item-body">
                         <p id="item-description">Card description that provides more details about this component.</p>
+                        <ul class="metadata-list">
+                            <li class="metadata-item">
+                                <span class="metadata-label">Codigo:</span>
+                                <span class="metadata-value" id="metadata-codigo"></span>
+                            </li>
+                            <li class="metadata-item">
+                                <span class="metadata-label">Direccion:</span>
+                                <span class="metadata-value" id="metadata-direccion"></span>
+                            </li>
+                            <li class="metadata-item">
+                                <span class="metadata-label">Fecha de Nacimiento:</span>
+                                <span class="metadata-value" id="metadata-fecha-nacimiento"></span>
+                            </li>
+                            <li class="metadata-item">
+                                <span class="metadata-label">Nombre:</span>
+                                <span class="metadata-value" id="metadata-nombre"></span>
+                            </li>
+                            <li class="metadata-item">
+                                <span class="metadata-label">Telefono:</span>
+                                <span class="metadata-value" id="metadata-telefono"></span>
+                            </li>
+                        </ul>
                     </div>
                     <hr class="custom-separator" id="item-separator2">
                     <div class="card-footer" id="item-buttons">

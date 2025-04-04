@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../css/enviroment/background_variables.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="content">
+            <section class="view-section orientation-vertical">
+                <h2>Formulario</h2>
+                <form class="orientation-vertical" style="gap: 20px; width: 100%; max-width: 400px;">
+                    <div class="orientation-vertical">
+                        <label for="codigo" class="label-for-button">Codigo:</label>
+                        <input
+                            type="text"
+                            id="codigo"
+                            name="codigo"
+                            class="button-onlyicon-v2 bg-greyblue-light"
+                            placeholder="Ingrese el codigo"
+                        >
+                    </div>
+                    <div class="orientation-vertical">
+                        <label for="direccion" class="label-for-button">Direccion:</label>
+                        <input
+                            type="text"
+                            id="direccion"
+                            name="direccion"
+                            class="button-onlyicon-v2 bg-greyblue-light"
+                            placeholder="Ingrese la direccion"
+                        >
+                    </div>
+                    <div class="orientation-vertical">
+                        <label for="fecha-nacimiento" class="label-for-button">Fecha de Nacimiento:</label>
+                        <input
+                            type="date"
+                            id="fecha-nacimiento"
+                            name="fecha-nacimiento"
+                            class="button-onlyicon-v2 bg-greyblue-light"
+                        >
+                    </div>
+                    <div class="orientation-vertical">
+                        <label for="nombre" class="label-for-button">Nombre:</label>
+                        <input
+                            type="text"
+                            id="nombre"
+                            name="nombre"
+                            class="button-onlyicon-v2 bg-greyblue-light"
+                            placeholder="Ingrese el nombre"
+                        >
+                    </div>
+                    <div class="orientation-vertical">
+                        <label for="telefono" class="label-for-button">Telefono:</label>
+                        <input
+                            type="tel"
+                            id="telefono"
+                            name="telefono"
+                            class="button-onlyicon-v2 bg-greyblue-light"
+                            placeholder="Ingrese el telefono"
+                        >
+                    </div>
+                    <div class="orientation-vertical">
+                        <label for="Email" class="label-for-button">Email:</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            class="button-onlyicon-v2 bg-greyblue-light"
+                            placeholder="Ingrese el email"
+                        >
+                    </div>
+                    <button type="submit" id="submit-student" class="button-card-action">Enviar</button>
+                </form>
+            </section>
+        </div>
+        <script src="../js/add.js"></script>
+        <script src="../js/api/api.js"></script>
+    </body>
+</html>
