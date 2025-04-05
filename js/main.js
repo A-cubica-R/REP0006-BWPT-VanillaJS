@@ -117,50 +117,93 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             content.appendChild(clone);
         });
-
-        // ADD NEW STUDENT BUTTON
-        document.getElementById('add-student-button').addEventListener('click', async () => {
-            const viewSection = document.getElementById('view-section');
-            try {
-                const response = await fetch('./form.html');
-                if (!response.ok) {
-                    throw new Error('Failed to load form.html');
-                }
-                const htmlContent = await response.text();
-                viewSection.innerHTML = htmlContent;
-
-                const form = viewSection.querySelector('form');
-                form.addEventListener('submit', async (event) => {
-                    event.preventDefault();
-                    const student = {
-                        codigo: form.codigo.value,
-                        direccion: form.direccion.value,
-                        fecha_nacimiento: form['fecha-nacimiento'].value,
-                        nombre: form.nombre.value,
-                        telefono: form.telefono.value,
-                        email: form.email.value
-                    };
-
-                    try {
-                        await api.createStudent(student);
-                        alert('Student created successfully!');
-                        form.reset();
-                        location.reload(); // Refresh the page
-                    } catch (error) {
-                        console.error('Error creating student:', error);
-                        alert('Error creating student. Please try again later.');
-                    }
-                });
-                document.getElementById('cancel-student').addEventListener('click', () => {
-                    location.reload();
-                });
-            } catch (error) {
-                alert('Error loading form. Please try again later.');
-                console.error('Error loading form.html:', error);
-                viewSection.innerHTML = '<p>Error loading form. Please try again later.</p>';
-            }
-        });
     }
 
+    // ADD NEW STUDENT BUTTON
+    document.getElementById('add-student-button').addEventListener('click', async () => {
+        const viewSection = document.getElementById('view-section');
+        try {
+            const response = await fetch('./form.html');
+            if (!response.ok) {
+                throw new Error('Failed to load form.html');
+            }
+            const htmlContent = await response.text();
+            viewSection.innerHTML = htmlContent;
+
+            const form = viewSection.querySelector('form');
+            form.addEventListener('submit', async (event) => {
+                event.preventDefault();
+                const student = {
+                    codigo: form.codigo.value,
+                    direccion: form.direccion.value,
+                    fecha_nacimiento: form['fecha-nacimiento'].value,
+                    nombre: form.nombre.value,
+                    telefono: form.telefono.value,
+                    email: form.email.value
+                };
+
+                try {
+                    await api.createStudent(student);
+                    alert('Student created successfully!');
+                    form.reset();
+                    location.reload(); // Refresh the page
+                } catch (error) {
+                    console.error('Error creating student:', error);
+                    alert('Error creating student. Please try again later.');
+                }
+            });
+            document.getElementById('cancel-student').addEventListener('click', () => {
+                location.reload();
+            });
+        } catch (error) {
+            alert('Error loading form. Please try again later.');
+            console.error('Error loading form.html:', error);
+            viewSection.innerHTML = '<p>Error loading form. Please try again later.</p>';
+        }
+    });
+
+    // ADD NEW ASSIGNMENT BUTTON
+    document.getElementById('add-assign-button').addEventListener('click', async () => {
+        const viewSection = document.getElementById('view-section');
+        try {
+            const response = await fetch('./asignForm.html');
+            if (!response.ok) {
+                throw new Error('Failed to load asignForm.html');
+            }
+            const htmlContent = await response.text();
+            viewSection.innerHTML = '';
+            viewSection.innerHTML = htmlContent;
+
+            const form = viewSection.querySelector('form');
+            form.addEventListener('submit', async (event) => {
+                event.preventDefault();
+                const assignment = {
+                    codigo: form.codigo.value,
+                    nombre: form.nombre.value,
+                    descripcion: form.descripcion.value,
+                    creditos: parseInt(form.creditos.value, 10)
+                };
+
+                try {
+                    await api.addAssigment(assignment);
+                    alert('Assignment created successfully!');
+                    form.reset();
+                    location.reload();
+                } catch (error) {
+                    console.error('Error creating assignment:', error);
+                    alert('Error creating assignment. Please try again later.');
+                }
+            });
+
+            document.getElementById('cancel-asignatura').addEventListener('click', () => {
+                location.reload();
+            });
+        } catch (error) {
+            alert('Error loading form. Please try again later.');
+            console.error('Error loading asignForm.html:', error);
+            viewSection.innerHTML = '<p>Error loading form. Please try again later.</p>';
+        }
+    });
+    
     document.getElementById('students-button').addEventListener('click', renderStudents);
 });

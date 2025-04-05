@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/enviroment/color_variables.css">
+        <link rel="stylesheet" href="../css/global/global_display.css">
+        <link rel="stylesheet" href="../css/global/global_classes.css">
+        <link rel="stylesheet" href="../css/enviroment/orientation_def.css">
+        <link rel="stylesheet" href="../css/particular/item_display.css">
+        <link rel="stylesheet" href="../css/particular/size_display.css">
+        <link rel="stylesheet" href="../css/particular/effect_display.css">
+        <link rel="stylesheet" href="../css/particular/style_display.css">
+        <title>Formulario Asignatura</title>
+    </head>
+    <body>
+        <div class="content" style="margin: 10px;">
+            <section class="view-section orientation-vertical" style="align-items: center;">
+                <h2>Formulario Asignatura</h2>
+                <form class="orientation-vertical" style="gap: 20px; width: 100%; max-width: 400px;">
+                    <div class="orientation-vertical">
+                        <label for="codigo" class="label-for-button">Codigo:</label>
+                        <input
+                            type="text"
+                            id="codigo"
+                            name="codigo"
+                            class="button-onlyicon-v2 bg-greyblue-light"
+                            placeholder="Ingrese el codigo"
+                        >
+                    </div>
+                    <div class="orientation-vertical">
+                        <label for="nombre" class="label-for-button">Nombre:</label>
+                        <input
+                            type="text"
+                            id="nombre"
+                            name="nombre"
+                            class="button-onlyicon-v2 bg-greyblue-light"
+                            placeholder="Ingrese el nombre"
+                        >
+                    </div>
+                    <div class="orientation-vertical">
+                        <label for="descripcion" class="label-for-button">Descripcion:</label>
+                        <textarea
+                            id="descripcion"
+                            name="descripcion"
+                            class="button-onlyicon-v2 bg-greyblue-light"
+                            placeholder="Ingrese la descripcion"
+                            rows="4"
+                        ></textarea>
+                    </div>
+                    <div class="orientation-vertical">
+                        <label for="creditos" class="label-for-button">Creditos:</label>
+                        <input
+                            type="number"
+                            id="creditos"
+                            name="creditos"
+                            class="button-onlyicon-v2 bg-greyblue-light"
+                            placeholder="Ingrese los creditos"
+                            min="0"
+                        >
+                    </div>
+                    <button type="button" id="cancel-asignatura" class="button-card-action">Cancelar</button>
+                    <button type="submit" id="submit-asignatura" class="button-card-action">Enviar</button>
+                </form>
+            </section>
+        </div>
+        <script src="../js/main.js"></script>
+    </body>
+</html>

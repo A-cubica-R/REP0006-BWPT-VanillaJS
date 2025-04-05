@@ -139,25 +139,25 @@ const api = {
     },
 
 
-    // // Add a technology to a student
-    // async addStudentTechnology(studentTech) {
-    //     try {
-    //         const response = await fetch(`${API_URL}/student_technology`, {
-    //             method: 'POST',
-    //             headers: this.headers,
-    //             body: JSON.stringify(studentTech)
-    //         });
+    // Add a technology to a student
+    async addAssigment(studentTech) {
+        try {
+            const response = await fetch(`${API_URL}/asignatura`, {
+                method: 'POST',
+                headers: this.headers,
+                body: JSON.stringify(studentTech)
+            });
 
-    //         if (!response.ok) {
-    //             throw new Error('Failed to add technology to student');
-    //         }
+            if (!response.ok) {
+                throw new Error('Failed to add technology to student');
+            }
 
-    //         return await response.json();
-    //     } catch (error) {
-    //         console.error('Error adding technology to student:', error);
-    //         throw error;
-    //     }
-    // },
+            return await response.json();
+        } catch (error) {
+            console.error('Error adding technology to student:', error);
+            throw error;
+        }
+    },
 
 
     // // Update a student's technology
