@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const template = document.getElementById('item-card-template');
 
     // CARGAR LA PANTALLA PRINCIPAL
-    async function renderEntities() {
+    async function renderStudents() {
         content.innerHTML = '';
         const students = await api.getStudents();
         students.forEach((ent) => {
@@ -41,6 +41,21 @@ document.addEventListener('DOMContentLoaded', async () => {
                     document.getElementById('student-fecha-nacimiento').textContent = student.fecha_nacimiento;
                     document.getElementById('student-telefono').textContent = student.telefono;
                     document.getElementById('student-email').textContent = student.email;
+
+                    // Render dynamic items in 'asignlist'
+                    const asignlist = document.getElementById('asignlist');
+                    const tempList = document.getElementById('item-list-template');
+                    const assignments = await api.getStudentMat(student.codigo);
+                    asignlist.innerHTML = ''; // Clear previous content
+                    assignments.forEach((asign) => {
+                        const assignment = asign.asignatura;
+                        const clonet = tempList.content.cloneNode(true);
+                        clonet.querySelector('#item-title').textContent = assignment.nombre;
+                        clonet.querySelector('#item-description').textContent = assignment.descripcion;
+                        clonet.querySelector('#metadata-codigo').textContent = assignment.codigo;
+                        clonet.querySelector('#metadata-creditos').textContent = assignment.creditos;
+                        asignlist.appendChild(clonet);
+                    });
 
                     // Add functionality to "Regresar" button
                     document.getElementById('back-home-button').addEventListener('click', () => {
@@ -136,6 +151,9 @@ document.addEventListener('DOMContentLoaded', async () => {
                         alert('Error creating student. Please try again later.');
                     }
                 });
+                document.getElementById('cancel-student').addEventListener('click', () => {
+                    location.reload();
+                });
             } catch (error) {
                 alert('Error loading form. Please try again later.');
                 console.error('Error loading form.html:', error);
@@ -144,5 +162,5 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    await renderEntities();
+    document.getElementById('students-button').addEventListener('click', renderStudents);
 });

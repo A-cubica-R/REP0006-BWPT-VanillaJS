@@ -12,7 +12,7 @@ const api = {
 
 
 
-    //   GET /alumno
+    // GET /alumno
 
     // POST /alumno
 
@@ -119,24 +119,24 @@ const api = {
     // },
 
 
-    // // Fetch technologies for a specific student
-    // async getStudentTechnologies(studentCode) {
-    //     try {
-    //         const response = await fetch(
-    //             `${API_URL}/student_technology?student_code=eq.${studentCode}&select=*,technology:technology_code(*)`, {
-    //             headers: this.headers
-    //         });
+    // Fetch technologies for a specific student
+    async getStudentMat(studentCode) {
+        try {
+            const response = await fetch(
+                `${API_URL}/matricula?codigo_alumno=eq.${studentCode}&select=asignatura(*)`, {
+                headers: this.headers
+            });
 
-    //         if (!response.ok) {
-    //             throw new Error('Failed to fetch student technologies');
-    //         }
+            if (!response.ok) {
+                throw new Error('Failed to fetch student technologies');
+            }
 
-    //         return await response.json();
-    //     } catch (error) {
-    //         console.error(`Error fetching technologies for student ${studentCode}:`, error);
-    //         throw error;
-    //     }
-    // },
+            return await response.json();
+        } catch (error) {
+            console.error(`Error fetching technologies for student ${studentCode}:`, error);
+            throw error;
+        }
+    },
 
 
     // // Add a technology to a student

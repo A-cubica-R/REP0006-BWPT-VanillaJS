@@ -55,7 +55,32 @@
                         <button class="button-card-action" id="back-home-button">Regresar</button>
                     </div>
                 </section>
+                <section id="asignlist" class="view-section orientation-vertical" style="gap: 20px;">
+                </section>
             </main>
         </div>
+        <template id="item-list-template">
+            <div class="item-list-format" id="item-component">
+                <div class="metadata-content orientation-horizontal" id="item-header">
+                    <div id="item-image">
+                        <img src="../resources/images/image.png" alt="Logo" class="logo img-circle">
+                    </div>
+                    <div class="orientation-vertical" id="item-text">
+                        <h2 id="item-title">Nombre de la Asignatura</h2>
+                        <p id="item-description">Descripción de la asignatura</p>
+                        <ul class="metadata-list">
+                            <li class="metadata-item">
+                                <span class="metadata-label">Código:</span>
+                                <span class="metadata-value" id="metadata-codigo">---</span>
+                            </li>
+                            <li class="metadata-item">
+                                <span class="metadata-label">Créditos:</span>
+                                <span class="metadata-value" id="metadata-creditos">---</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </template>
     </body>
 </html>
