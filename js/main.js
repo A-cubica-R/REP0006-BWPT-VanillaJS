@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const content = document.getElementById('view-section');
     const template = document.getElementById('item-card-template');
 
+    // CARGAR LA PANTALLA PRINCIPAL
     async function renderEntities() {
         content.innerHTML = '';
         const students = await api.getStudents();
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             clone.querySelector('#metadata-nombre').textContent = ent.nombre || '';
             clone.querySelector('#metadata-telefono').textContent = ent.telefono || '';
 
+            // REVIEW STUDENT BUTTON
             clone.querySelector('#review-student').addEventListener('click', async () => {
                 try {
                     const response = await fetch('./review.html');
@@ -44,6 +46,54 @@ document.addEventListener('DOMContentLoaded', async () => {
                     document.getElementById('back-home-button').addEventListener('click', () => {
                         location.reload(); // Reload the main page
                     });
+
+                    document.getElementById('edit-student-button').addEventListener('click', async () => {
+                        try {
+                            const response = await fetch('./edit.html');
+                            if (!response.ok) {
+                                throw new Error('Failed to load review.html');
+                            }
+                            const htmlContent = await response.text();
+                            content.innerHTML = '';
+                            content.innerHTML = htmlContent;
+
+                            // Fetch student details using API
+                            const student = await api.getStudentByCode(ent.codigo);
+
+                            // Populate review.html with student data
+                            document.getElementById('nombre').value = student.nombre;
+                            document.getElementById('codigo').value = student.codigo;
+                            document.getElementById('direccion').value = student.direccion;
+                            document.getElementById('fecha-nacimiento').value = student.fecha_nacimiento;
+                            document.getElementById('telefono').value = student.telefono;
+                            document.getElementById('email').value = student.email;
+
+                            document.getElementById('save-student').addEventListener('click', (event) => {
+                                event.preventDefault();
+                                const newStudent = {
+                                    direccion: document.getElementById('direccion').value,
+                                    fecha_nacimiento: document.getElementById('fecha-nacimiento').value,
+                                    nombre: document.getElementById('nombre').value,
+                                    telefono: document.getElementById('telefono').value,
+                                    email: document.getElementById('email').value
+                                };
+                                api.updateStudent(student.codigo, newStudent).then(() => {
+                                    alert('Student updated successfully!');
+                                    location.reload();
+                                }).catch((error) => {
+                                    console.error('Error updating student:', error);
+                                    alert('Error updating student. Please try again later.');
+                                });
+                            });
+
+                            document.getElementById('cancel-edit').addEventListener('click', () => {
+                                location.reload();
+                            });
+                        } catch (error) {
+                            console.error('Error loading edit.html:', error);
+                            content.innerHTML = '<p>Error loading review. Please try again later.</p>';
+                        }
+                    });
                 } catch (error) {
                     console.error('Error loading review.html:', error);
                     content.innerHTML = '<p>Error loading review. Please try again later.</p>';
@@ -53,8 +103,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             content.appendChild(clone);
         });
 
-        // ADD NEW STUDENT
-
+        // ADD NEW STUDENT BUTTON
         document.getElementById('add-student-button').addEventListener('click', async () => {
             const viewSection = document.getElementById('view-section');
             try {

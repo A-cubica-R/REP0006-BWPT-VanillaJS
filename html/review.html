@@ -57,31 +57,5 @@
                 </section>
             </main>
         </div>
-        <script>
-            document.getElementById('back-home-button').addEventListener('click', () => {
-                location.reload(); // Reload the page to return to the main view
-            });
-
-            document.getElementById('edit-student-button').addEventListener('click', () => {
-                alert('Funcionalidad de edición no implementada aún.');
-            });
-
-            // Example: Populate student data (replace with actual logic)
-            const student = {
-                codigo: '12345',
-                direccion: 'Calle Falsa 123',
-                fecha_nacimiento: '2000-01-01',
-                nombre: 'Juan Pérez',
-                telefono: '555-1234',
-                email: 'juan.perez@example.com'
-            };
-
-            document.getElementById('student-name').textContent = student.nombre;
-            document.getElementById('student-codigo').textContent = student.codigo;
-            document.getElementById('student-direccion').textContent = student.direccion;
-            document.getElementById('student-fecha-nacimiento').textContent = student.fecha_nacimiento;
-            document.getElementById('student-telefono').textContent = student.telefono;
-            document.getElementById('student-email').textContent = student.email;
-        </script>
     </body>
 </html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Editar Estudiante</title>
+        <!-- Global Styles -->
+        <link rel="stylesheet" href="../css/enviroment/color_variables.css">
+        <link rel="stylesheet" href="../css/global/global_display.css">
+        <link rel="stylesheet" href="../css/global/global_classes.css">
+        <link rel="stylesheet" href="../css/enviroment/orientation_def.css">
+        <!-- Particular Styles -->
+        <link rel="stylesheet" href="../css/particular/item_display.css">
+        <link rel="stylesheet" href="../css/particular/size_display.css">
+        <link rel="stylesheet" href="../css/particular/effect_display.css">
+        <link rel="stylesheet" href="../css/particular/style_display.css">
+        <!-- RemixIcon icons source -->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="content">
+            <main class="element-content">
+                <section class="view-section orientation-vertical" style="align-items: center; gap: 20px;">
+                    <h2>Editar Estudiante</h2>
+                    <form class="orientation-vertical" style="gap: 20px; width: 100%; max-width: 400px;">
+                        <div class="orientation-vertical">
+                            <label for="codigo" class="label-for-button">Codigo:</label>
+                            <input
+                                type="text"
+                                id="codigo"
+                                name="codigo"
+                                class="button-onlyicon-v2 bg-greyblue-light"
+                                readonly
+                            >
+                        </div>
+                        <div class="orientation-vertical">
+                            <label for="direccion" class="label-for-button">Direccion:</label>
+                            <input
+                                type="text"
+                                id="direccion"
+                                name="direccion"
+                                class="button-onlyicon-v2 bg-greyblue-light"
+                            >
+                        </div>
+                        <div class="orientation-vertical">
+                            <label for="fecha-nacimiento" class="label-for-button">Fecha de Nacimiento:</label>
+                            <input
+                                type="date"
+                                id="fecha-nacimiento"
+                                name="fecha-nacimiento"
+                                class="button-onlyicon-v2 bg-greyblue-light"
+                            >
+                        </div>
+                        <div class="orientation-vertical">
+                            <label for="nombre" class="label-for-button">Nombre:</label>
+                            <input
+                                type="text"
+                                id="nombre"
+                                name="nombre"
+                                class="button-onlyicon-v2 bg-greyblue-light"
+                            >
+                        </div>
+                        <div class="orientation-vertical">
+                            <label for="telefono" class="label-for-button">Telefono:</label>
+                            <input
+                                type="tel"
+                                id="telefono"
+                                name="telefono"
+                                class="button-onlyicon-v2 bg-greyblue-light"
+                            >
+                        </div>
+                        <div class="orientation-vertical">
+                            <label for="email" class="label-for-button">Email:</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                class="button-onlyicon-v2 bg-greyblue-light"
+                            >
+                        </div>
+                        <div class="buttons orientation-horizontal" style="gap: 10px;">
+                            <button type="button" id="save-student" class="button-card-action">Guardar</button>
+                            <button type="button" id="cancel-edit" class="button-card-action">Cancelar</button>
+                        </div>
+                    </form>
+                </section>
+            </main>
+        </div>
+    </body>
+</html>

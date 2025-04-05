@@ -79,25 +79,25 @@ const api = {
     },
 
 
-    // // Update an existing student
-    // async updateStudent(code, student) {
-    //     try {
-    //         const response = await fetch(`${API_URL}/student?code=eq.${code}`, {
-    //             method: 'PATCH',
-    //             headers: this.headers,
-    //             body: JSON.stringify(student)
-    //         });
+    // Update an existing student
+    async updateStudent(code, student) {
+        try {
+            const response = await fetch(`${API_URL}/alumno?codigo=eq.${code}`, {
+                method: 'PATCH',
+                headers: this.headers,
+                body: JSON.stringify(student)
+            });
 
-    //         if (!response.ok) {
-    //             throw new Error('Failed to update student');
-    //         }
+            if (!response.ok) {
+                throw new Error('Failed to update student');
+            }
 
-    //         return await response.json();
-    //     } catch (error) {
-    //         console.error(`Error updating student with code ${code}:`, error);
-    //         throw error;
-    //     }
-    // },
+            return await response.json();
+        } catch (error) {
+            console.error(`Error updating student with code ${code}:`, error);
+            throw error;
+        }
+    },
 
 
     // // Fetch all technologies
