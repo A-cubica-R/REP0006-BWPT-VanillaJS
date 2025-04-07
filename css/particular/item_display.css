@@ -144,7 +144,18 @@
     height: 100vh;
 }
 
+.item-list-format,
+.item-list-format #item-header {
+    width: 100%;
+}
+
+
 .login-display{
     gap: 20px;
     padding: 50px;
+}
+
+.item-buttons-right {
+    margin-left: auto;
+    justify-content: flex-end;
 }

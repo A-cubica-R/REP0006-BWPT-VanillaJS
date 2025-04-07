@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Confirmar Eliminación</title>
+        <!-- Global Styles -->
+        <link rel="stylesheet" href="../css/enviroment/color_variables.css">
+        <link rel="stylesheet" href="../css/global/global_display.css">
+        <link rel="stylesheet" href="../css/global/global_classes.css">
+        <link rel="stylesheet" href="../css/enviroment/orientation_def.css">
+        <!-- Particular Styles -->
+        <link rel="stylesheet" href="../css/particular/item_display.css">
+        <link rel="stylesheet" href="../css/particular/size_display.css">
+        <link rel="stylesheet" href="../css/particular/effect_display.css">
+        <link rel="stylesheet" href="../css/particular/style_display.css">
+    </head>
+    <body>
+        <div class="content" style="display: flex; align-items: center; justify-content: center; height: 100vh;">
+            <section class="view-section orientation-vertical" style="align-items: center; gap: 20px; max-width: 400px; padding: 20px; border: 1px solid var(--greyblue_dark); border-radius: 10px; background-color: var(--greyblue_light);">
+                <h2 style="text-align: center;">¿Está seguro de que desea eliminar este elemento?</h2>
+                <ul class="metadata-list" style="width: 100%; text-align: left;">
+                    <li class="metadata-item">
+                        <span class="metadata-label">Tipo de elemento:</span>
+                        <span class="metadata-value" id="item-type">---</span>
+                    </li>
+                    <li class="metadata-item">
+                        <span class="metadata-label">ID del elemento:</span>
+                        <span class="metadata-value" id="item-id">---</span>
+                    </li>
+                    <li class="metadata-item">
+                        <span class="metadata-label">Nombre del elemento:</span>
+                        <span class="metadata-value" id="item-name">---</span>
+                    </li>
+                </ul>
+                <div class="buttons orientation-horizontal" style="gap: 10px;">
+                    <button class="button-card-action" id="confirm-delete">Confirmar</button>
+                    <button class="button-card-action" id="cancel-delete">Cancelar</button>
+                </div>
+            </section>
+        </div>
+        <script src="../js/main.js"></script>
+    </body>
+</html>

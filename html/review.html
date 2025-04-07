@@ -53,34 +53,83 @@
                     <div class="buttons orientation-horizontal" style="gap: 10px;">
                         <button class="button-card-action" id="edit-student-button">Editar</button>
                         <button class="button-card-action" id="back-home-button">Regresar</button>
+                        <div class="combobox-container orientation-vertical" style="display: flex; align-items: center; gap: 10px;">
+                            <select id="assign-combobox" class="button-card-action" style="flex: 1; text-align: center;">
+                                <option value="" disabled selected>Añadir Materia</option>
+                            </select>
+                            <button id="add-assign-button" class="button-card-action" style="flex: 1; text-align: center;">Añadir Selección</button>
+                        </div>
                     </div>
                 </section>
-                <section id="asignlist" class="view-section orientation-vertical" style="gap: 20px;">
-                </section>
+                <section id="asignlist" class="view-section orientation-vertical" style="gap: 20px;"></section>
             </main>
         </div>
         <template id="item-list-template">
             <div class="item-list-format" id="item-component">
-                <div class="metadata-content orientation-horizontal" id="item-header">
-                    <div id="item-image">
-                        <img src="../resources/images/image.png" alt="Logo" class="logo img-circle">
+                <div class="metadata-content orientation-horizontal" id="item-header" style="justify-content: space-between;">
+                    <div>
+                        <div id="item-image">
+                            <img src="../resources/images/image.png" alt="Logo" class="logo img-circle">
+                        </div>
+                        <div class="orientation-vertical" id="item-text">
+                            <h2 id="item-title">Nombre de la Asignatura</h2>
+                            <p id="item-description">Descripción de la asignatura</p>
+                            <ul class="metadata-list">
+                                <li class="metadata-item">
+                                    <span class="metadata-label">Código:</span>
+                                    <span class="metadata-value" id="metadata-codigo">---</span>
+                                </li>
+                                <li class="metadata-item">
+                                    <span class="metadata-label">Créditos:</span>
+                                    <span class="metadata-value" id="metadata-creditos">---</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="orientation-vertical" id="item-text">
-                        <h2 id="item-title">Nombre de la Asignatura</h2>
-                        <p id="item-description">Descripción de la asignatura</p>
-                        <ul class="metadata-list">
-                            <li class="metadata-item">
-                                <span class="metadata-label">Código:</span>
-                                <span class="metadata-value" id="metadata-codigo">---</span>
-                            </li>
-                            <li class="metadata-item">
-                                <span class="metadata-label">Créditos:</span>
-                                <span class="metadata-value" id="metadata-creditos">---</span>
-                            </li>
-                        </ul>
+                    <div class="orientation-horizontal" id="item-buttons" style="gap: 10px;">
+                        <button class="button-card-action" id="review-assign">Review</button>
+                        <button class="button-card-action" id="delete-assign">Delete</button>
                     </div>
                 </div>
             </div>
         </template>
+        <script>
+            document.addEventListener('DOMContentLoaded', async () => {
+                const combobox = document.getElementById('assign-combobox');
+                const addAssignButton = document.getElementById('add-assign-button');
+
+                // Cargar materias en el combobox
+                try {
+                    const assignments = await api.getMats();
+                    assignments.forEach((assignment) => {
+                        const option = document.createElement('option');
+                        option.value = assignment.codigo;
+                        option.textContent = assignment.nombre;
+                        combobox.appendChild(option);
+                    });
+                } catch (error) {
+                    console.error('Error loading assignments:', error);
+                }
+
+                // Añadir materia al estudiante
+                addAssignButton.addEventListener('click', async () => {
+                    const selectedCode = combobox.value;
+                    if (!selectedCode) {
+                        alert('Por favor, selecciona una materia.');
+                        return;
+                    }
+
+                    const studentCode = document.getElementById('student-codigo').textContent;
+                    try {
+                        await api.addAssigmentToStudent(studentCode, selectedCode);
+                        alert('Materia añadida exitosamente.');
+                        location.reload(); // Recargar la vista del estudiante
+                    } catch (error) {
+                        console.error('Error adding assignment to student:', error);
+                        alert('Error al añadir la materia. Inténtalo de nuevo.');
+                    }
+                });
+            });
+        </script>
     </body>
 </html>

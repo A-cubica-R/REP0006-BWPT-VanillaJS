@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Detalles de Asignatura</title>
+        <!-- Global Styles -->
+        <link rel="stylesheet" href="../css/enviroment/color_variables.css">
+        <link rel="stylesheet" href="../css/global/global_display.css">
+        <link rel="stylesheet" href="../css/global/global_classes.css">
+        <link rel="stylesheet" href="../css/enviroment/orientation_def.css">
+        <!-- Particular Styles -->
+        <link rel="stylesheet" href="../css/particular/item_display.css">
+        <link rel="stylesheet" href="../css/particular/size_display.css">
+        <link rel="stylesheet" href="../css/particular/effect_display.css">
+        <link rel="stylesheet" href="../css/particular/style_display.css">
+        <!-- RemixIcon icons source -->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="content">
+            <main class="element-content">
+                <section class="view-section orientation-vertical" style="align-items: center; gap: 20px;">
+                    <img
+                        src="../resources/images/image.png"
+                        alt="Logo de la Asignatura"
+                        class="avatar img-circle"
+                        style="max-width: 150px;"
+                    >
+                    <h2 id="asign-title">Nombre de la Asignatura</h2>
+                    <ul class="metadata-list">
+                        <li class="metadata-item">
+                            <span class="metadata-label">Código:</span>
+                            <span class="metadata-value" id="asign-codigo">---</span>
+                        </li>
+                        <li class="metadata-item">
+                            <span class="metadata-label">Descripción:</span>
+                            <span class="metadata-value" id="asign-descripcion">---</span>
+                        </li>
+                        <li class="metadata-item">
+                            <span class="metadata-label">Créditos:</span>
+                            <span class="metadata-value" id="asign-creditos">---</span>
+                        </li>
+                    </ul>
+                    <div class="buttons orientation-horizontal" style="gap: 10px;">
+                        <button class="button-card-action" id="back-home-button">Regresar</button>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </body>
+</html>

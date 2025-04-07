@@ -98,25 +98,46 @@ const api = {
             throw error;
         }
     },
+    
+
+    // Delete a student's technology
+    async deleteStudent(studentCode) {
+        try {
+            const response = await fetch(
+                `${API_URL}/alumno?codigo=eq.${studentCode}`, {
+                method: 'DELETE',
+                headers: this.headers
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to delete student technology');
+            }
+
+            return true;
+        } catch (error) {
+            console.error('Error deleting student technology:', error);
+            throw error;
+        }
+    },
 
 
-    // // Fetch all technologies
-    // async getTechnologies() {
-    //     try {
-    //         const response = await fetch(`${API_URL}/technology?select=*`, {
-    //             headers: this.headers
-    //         });
+    // Fetch all technologies
+    async getMats() {
+        try {
+            const response = await fetch(`${API_URL}/asignatura`, {
+                headers: this.headers
+            });
 
-    //         if (!response.ok) {
-    //             throw new Error('Failed to fetch technologies');
-    //         }
+            if (!response.ok) {
+                throw new Error('Failed to fetch technologies');
+            }
 
-    //         return await response.json();
-    //     } catch (error) {
-    //         console.error('Error fetching technologies:', error);
-    //         throw error;
-    //     }
-    // },
+            return await response.json();
+        } catch (error) {
+            console.error('Error fetching technologies:', error);
+            throw error;
+        }
+    },
 
 
     // Fetch technologies for a specific student
@@ -159,6 +180,63 @@ const api = {
         }
     },
 
+    async addAssigmentToStudent(studentCode) {
+        try {
+            const response = await fetch(`${API_URL}/asignatura`, {
+                method: 'POST',
+                headers: this.headers,
+                body: JSON.stringify(studentCode)
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to add technology to student');
+            }
+
+            return await response.json();
+        } catch (error) {
+            console.error('Error adding technology to student:', error);
+            throw error;
+        }
+    },
+
+    async deleteAssign(assignCode) {
+        try {
+            const response = await fetch(
+                `${API_URL}/asignatura?codigo=eq.${assignCode}`, {
+                method: 'DELETE',
+                headers: this.headers
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to delete student technology');
+            }
+
+            return true;
+        } catch (error) {
+            console.error('Error deleting student technology:', error);
+            throw error;
+        }
+    },
+
+    async deleteAssignForStudent(studentCode, assignCode) {
+        try {
+            const response = await fetch(
+                `${API_URL}/matricula?codigo_alumno=eq.${studentCode}&codigo_asignatura=eq.${assignCode}`, {
+                method: 'DELETE',
+                headers: this.headers
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to delete student technology');
+            }
+
+            return true;
+        } catch (error) {
+            console.error('Error deleting student technology:', error);
+            throw error;
+        }
+    }
+
 
     // // Update a student's technology
     // async updateStudentTechnology(studentCode, technologyCode, level) {
@@ -181,26 +259,6 @@ const api = {
     //     }
     // },
 
-
-    // // Delete a student's technology
-    // async deleteStudentTechnology(studentCode, technologyCode) {
-    //     try {
-    //         const response = await fetch(
-    //             `${API_URL}/student_technology?student_code=eq.${studentCode}&technology_code=eq.${technologyCode}`, {
-    //             method: 'DELETE',
-    //             headers: this.headers
-    //         });
-
-    //         if (!response.ok) {
-    //             throw new Error('Failed to delete student technology');
-    //         }
-
-    //         return true;
-    //     } catch (error) {
-    //         console.error('Error deleting student technology:', error);
-    //         throw error;
-    //     }
-    // }
 };
 
 export default api;
